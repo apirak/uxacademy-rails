@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2017-04-24
+  period: 9.99
+  max_price: 9.99
+  low_price: 9.99
+  url: MyString
+
+two:
+  name: MyString
+  start_date: 2017-04-24
+  period: 9.99
+  max_price: 9.99
+  low_price: 9.99
+  url: MyString
