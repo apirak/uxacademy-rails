@@ -1,0 +1,82 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "owl.carousel";
+@import "owl.theme";
+
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+/* path to glyphicons */
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+$fa-font-path: "../bower_components/font-awesome/fonts" !default;
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bower_components/font-awesome/scss/font-awesome";
+
+// Our variables
+$base-font-family: 'THSarabunNew', sans-serif;
+$base-font-size:   150%;
+
+$small-font-size:  1em;
+$big-font-size:    1.3em;
+$large-font-size:  2.8em;
+
+$big-font-size-mobile: 1em;
+$large-font-size-mobile: 1.8em;
+
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$text-bold-color:  #4791E5; //blue
+$text-highlight-color: #2D4D78;
+$text-highlight-background-color: #AED1FF;
+$text-highlight-color-on-dark: #FFFFFF;
+$text-highlight-background-color-on-dark: #5595DE;
+
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$text-color-light: #fff;
+$text-color-soft:  transparentize($text-color-light, 0.5);
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 20%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          767px;
+$on-laptop:        970px;
+$nav-height:       50px;
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@import "mixin";
+@import "font";
+@import "base";
+@import "layout";
+@import "home";
+@import "blog";
+@import "post";
+@import "footer";
+@import "syntax-highlighting";
+@import "table";

@@ -1,0 +1,54 @@
+.post {
+  .banner {
+    height: 115px;
+    background-position-y: 50%;
+    @include media-query($on-laptop) {
+      background-size: 150% auto;
+    }
+  }
+
+  .post-header {
+    @extend .container;
+    margin-top: $spacing-unit;
+    .content {
+      @include easyread-layout;
+      h1{
+        color: $text-bold-color;
+      }
+      .post-meta {
+        margin-bottom: 0px;
+      }
+    }
+    @include media-query($on-palm) {
+      .content {
+        h1 {
+          font-size: $large-font-size-mobile;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .post-content {
+    @extend .container;
+    .content {
+      @include easyread-layout;
+    }
+    p {
+      margin-bottom: $spacing-unit;
+      line-height: 160%;
+      em:last-child {
+        display: block;
+      }
+    }
+    img {
+      @extend .img-responsive;
+    }
+  }
+
+  .next-previous-post {
+    @extend .container;
+    text-align: center;
+  }
+
+}

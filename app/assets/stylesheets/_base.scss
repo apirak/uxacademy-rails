@@ -1,0 +1,109 @@
+body {
+  font-family: $base-font-family;
+  color:#666;
+  font-size: $base-font-size;
+  line-height: normal;
+  font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+}
+
+b {
+  font-weight: normal;
+  padding: 3px 5px 0px 5px;
+}
+
+p {
+  b, strong {
+    @extend b;
+    color: $text-highlight-color;
+    background-color: $text-highlight-background-color;
+  }
+}
+
+p.dark {
+  b, strong {
+    @extend b;
+    color: $text-highlight-color-on-dark;
+    background-color: $text-highlight-background-color-on-dark;
+  }
+}
+
+span.label {
+  padding: 0px 6px;
+  font-size: 60%;
+  border-radius: .50em;
+}
+
+.container{
+  max-width: 970px;
+}
+
+.navbar {
+  padding-top: 30px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 0px 0px 10px;
+  font-size: $big-font-size;
+  > img {
+      display: inline;
+  }
+}
+.navbar-nav {
+  a {
+    // padding-top: 45px;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.logo {
+  width: 47px;
+  height: 50px;
+  vertical-align: middle;
+  display: inline-block;
+  background: url("/images/uxacademy_logo.png") no-repeat;
+  @include image-2x("/images/uxacademy_logo@2x.png", 47px, 50px);
+}
+
+/**
+ * Clearfix
+ */
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+    line-height: normal;
+}
+
+
+/**
+ * Icons
+ */
+.icon {
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    path {
+        fill: $grey-color;
+    }
+  }
+}

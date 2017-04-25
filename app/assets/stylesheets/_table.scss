@@ -1,0 +1,32 @@
+.table {
+  text-align: center;
+
+  .product {
+    margin-bottom: 80px;
+  }
+
+  img {
+    float: lef;
+  }
+
+  button {
+    display: inline-block;
+    line-height: 1.8em;
+    border-radius: 6px;
+    color: white;
+    background: #1bafe0;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: normal;
+    margin: 20px 2px;
+    padding: 0 1.5em;
+    border: 1px solid #1bafe0;
+    text-decoration: none;
+  }
+
+  > thead > tr > th {
+    text-align: center;
+  }
+}
