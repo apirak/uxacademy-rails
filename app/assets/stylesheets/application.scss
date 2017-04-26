@@ -4,22 +4,8 @@
 @import "owl.carousel";
 @import "owl.theme";
 
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-
-@charset "utf-8";
-
-/* path to glyphicons */
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
-$fa-font-path: "../bower_components/font-awesome/fonts" !default;
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "../bower_components/font-awesome/scss/font-awesome";
-
-// Our variables
 $base-font-family: 'THSarabunNew', sans-serif;
-$base-font-size:   150%;
+$base-font-size:   230%;
 
 $small-font-size:  1em;
 $big-font-size:    1.3em;
@@ -56,14 +42,6 @@ $on-palm:          767px;
 $on-laptop:        970px;
 $nav-height:       50px;
 
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;

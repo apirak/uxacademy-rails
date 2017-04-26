@@ -1,0 +1,38 @@
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+
+{% if (page.carousel == "using") %}
+
+<script src="/bower_components/owl.carousel/owl.carousel.min.js"></script>
+
+<script src="/bower_components/typed.js/dist/typed.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+  $("#carousel-alumni").owlCarousel({
+    slideSpeed : 300,
+    paginationSpeed : 300,
+    singleItem: true
+  });
+
+  $(function(){
+      $(".typed").typed({
+          strings: ["HAPPINESS", "TEAM WORK", "WORKFLOW", "INTERFACE", "USABILITY", "INTERACTION", "EXPERIENCE"],
+          typeSpeed: 100,
+          startDelay: 0,
+          backSeed: 1000,
+          backDelay: 2000,
+          loop: true,
+          loopCount: false,
+          showCursor: true
+      });
+  });
+
+});
+</script>
+
+{% endif %}
+
+<!-- <script src="/scripts/main.js"></script> -->

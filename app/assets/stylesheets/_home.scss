@@ -3,7 +3,7 @@
 }
 
 #banner {
-  background-image: url('/images/home_banner.jpg');
+  background-image: image-url('home_banner.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top center;
@@ -109,7 +109,7 @@
 }
 
 .course-banner{
-  background-image: url('/images/course_banner_blue.jpg');
+  background-image: image-url('course_banner_blue.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top center;

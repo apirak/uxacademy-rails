@@ -1,0 +1,32 @@
+<div class="testimonial-background">
+  <div class="testimonial">
+    <div class="row">
+      <h2>Testimonial</h2>
+      <div class="col-md-12">
+        <div id="carousel-alumni" class="owl-carousel">
+          <% @alumnis.each do |member| %>
+            <div class="item">
+              <div class="alumni">
+                <p class="dark">
+                  <%= member.feedback.html_safe %>
+                </p>
+                <div class="profile">
+                  <img src="/images/alumni/<%= member.photo %>" />
+                  <div class="profile-text">
+                    <%= member.name %><br/>
+                    <span class="company">
+                      <%= member.position %> <br/>
+                      <a href="<%= member.company_url %>">
+                        @ <%= member.company %>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
