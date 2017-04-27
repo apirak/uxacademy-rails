@@ -1,6 +1,14 @@
 ActiveAdmin.register Alumni do
   permit_params :name, :position, :company, :company_url, :photo, :feedback
 
+  index do
+    selectable_column
+    column :name
+    column :position
+    column :company
+    column :photo
+  end
+
   form do |f|
     inputs do
       f.input :name, as: :string

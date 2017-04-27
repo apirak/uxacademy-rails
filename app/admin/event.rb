@@ -2,7 +2,7 @@ ActiveAdmin.register Event do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :start_date, :period, :max_price, :low_price, :url
+permit_params :name, :type, :start_date, :period, :max_price, :low_price, :url
 
 #
 # or

@@ -4,11 +4,17 @@
       <div class="contact">
         <ul class="contact-list">
           <li>
-            <p>{{ site.description }}</p>
+            <p>
+              UX Academy is evangelist company.
+              We focusing on User Experience design and use understanding
+              by the variety of method ex. User Research,
+              User Interview, Usability Testing, Data Analytic.
+              Our service is Training, Coaching and Consultant.
+            </p>
           </li>
           <li>
             <a href="mailto:{{ site.email }}">
-              <i class="fa fa-envelope"></i> {{ site.email }}
+              <i class="fa fa-envelope"></i> kaewkanya@uxacademy.in.th
             </a>
           </li>
         </ul>
@@ -23,46 +29,32 @@
             </a>
           </li>
 
-          {% if site.github_username %}
           <li>
-            <a href="https://github.com/{{ site.github_username }}">
+            <a href="https://github.com/uxacademy">
               <i class="fa fa-github-square"></i>
-              <span class="username">{{ site.github_username }}</span>
+              <span class="username">uxacademy</span>
             </a>
           </li>
-          {% endif %}
 
-          {% if site.twitter_username %}
           <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <i class="fa fa-twitter-square"></i>
-              <span class="username">{{ site.twitter_username }}</span>
-            </a>
-          </li>
-          {% endif %}
-
-          {% if site.facebook_group %}
-          <li>
-            <a href="https://facebook.com/{{ site.facebook_username }}">
+            <a href="https://facebook.com/groups/ux.in.th">
               <i class="fa fa-facebook-square"></i>
-              <span class="username">Group: {{ site.facebook_group }}</span>
+              <span class="username">Group: groups/ux.in.th</span>
             </a>
           </li>
-          {% endif %}
 
-          {% if site.facebook_page %}
           <li>
-            <a href="https://facebook.com/{{ site.facebook_username }}">
+            <a href="https://facebook.com/uxacademy.th">
               <i class="fa fa-facebook-square"></i>
-              <span class="username">Page: {{ site.facebook_page }}</span>
+              <span class="username">Page: uxacademy.th</span>
             </a>
           </li>
-          {% endif %}
+
         </ul>
       </div>
 
       <div class="description">
-        {% include facebook_page_plugin.html %}
+        <%= render 'shared/facebook_page_plugin' %>
       </div>
     </div>
   </footer>

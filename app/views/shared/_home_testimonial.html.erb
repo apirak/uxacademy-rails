@@ -11,7 +11,7 @@
                   <%= member.feedback.html_safe %>
                 </p>
                 <div class="profile">
-                  <img src="/images/alumni/<%= member.photo %>" />
+                  <%= image_tag "alumni/#{member.photo}" %>
                   <div class="profile-text">
                     <%= member.name %><br/>
                     <span class="company">
