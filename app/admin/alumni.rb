@@ -7,6 +7,7 @@ ActiveAdmin.register Alumni do
     column :position
     column :company
     column :photo
+    actions
   end
 
   form do |f|

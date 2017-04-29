@@ -11,25 +11,34 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Fundamental, UI Workshop
-        </td>
-        <td>12 Nov, 2016</td>
-        <td class="price">d
-          4,500
-        </td>
-        <td class="price">
-          <br/>
-        </td>
-        <td>
-          <a class="btn btn-info"
-             href="http://bit.ly/ui-workshop">
-            <i class="fa fa-file-image-o"></i>
-            Gallery
-          </a><br/>
-        </td>
-      </tr>
-      <tr>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %>
+          </td>
+          <td><%= event.start_date.strftime("%e %B %Y") %> </td>
+          <td class="price">
+            <%= number_to_currency(event.max_price, :unit => "฿ ") %>
+          </td>
+          <td class="price">
+            <%= number_to_currency(event.low_price, :unit => "฿ ") %>
+          </td>
+          <td>
+            <% if event.start_date < Date.today %>
+              <a class="btn btn-info" href="<%= event.url_gallery %>">
+                <i class="fa fa-file-image-o"></i>
+                Gallery
+              </a><br/>
+            <% else %>
+              <a class="btn btn-success"
+                 href="<%= event.url %>">
+                <i class="fa fa-calendar"></i>
+                More detail
+              </a><br/>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+<!--       <tr>
         <td>Fundamental, UI Workshop
         </td>
         <td>21 Jan, 2017</td>
@@ -82,7 +91,7 @@
             More detail
           </a><br/>
         </td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

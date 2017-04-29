@@ -2,15 +2,15 @@ ActiveAdmin.register Event do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :type, :start_date, :period, :max_price, :low_price, :url
+permit_params :name, :start_date, :period, :max_price, :low_price, :url, :url_gallery
 
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+index do
+  selectable_column
+  column :name
+  column :start_date
+  column :period
+  column :url
+  actions
+end
 
 end

@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170427163708) do
     t.decimal  "max_price"
     t.decimal  "low_price"
     t.string   "url"
+    t.string   "url_gallery"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "type"
