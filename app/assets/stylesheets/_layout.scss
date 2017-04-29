@@ -133,7 +133,7 @@
     font-size: 20px;
 
     @include media-query($on-laptop) {
-      font-size: $large-font-size;
+      font-size: 18px;
     }
   }
 }
