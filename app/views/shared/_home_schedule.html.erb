@@ -25,13 +25,13 @@
           <td>
             <% if event.start_date < Date.today %>
               <a class="btn btn-info" href="<%= event.url_gallery %>">
-                <i class="fa fa-file-image-o"></i>
+                <i class="fa fa-file-image-o"></i></i>&nbsp;&nbsp;
                 Gallery
               </a><br/>
             <% else %>
               <a class="btn btn-success"
                  href="<%= event.url %>">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-calendar"></i>&nbsp;&nbsp;
                 More detail
               </a><br/>
             <% end %>

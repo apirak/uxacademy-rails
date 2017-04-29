@@ -149,7 +149,7 @@
   @include media-query($on-palm) {
     h3{
       font-weight: bold;
-      font-size: 18px;
+      font-size: $large-font-size;
       text-align: center;
     }
     p {
@@ -186,6 +186,7 @@
   h4.note {
     text-align: center;
     margin: $spacing-unit 0px $spacing-unit;
+    font-size: $big-font-size;
     a {
       color: #fff;
       font-weight: bold;
