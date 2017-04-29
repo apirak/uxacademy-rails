@@ -7,8 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.decimal :max_price
       t.decimal :low_price
       t.string :url
-      t.string, :url_gallery
-
+      t.string :url_gallery
       t.timestamps
     end
   end
