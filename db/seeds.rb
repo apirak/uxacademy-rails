@@ -90,39 +90,67 @@ Alumni.create!(
 Event.create!(
   name: "Fundamental, UI Workshop",
   start_date: Date.new(2016, 11, 12),
+  end_date: Date.today,
   period: '1 Day',
   max_price: '4500',
   low_price: '',
   url: 'https://craftfig.co/courses/fundamental-ui2',
-  url_gallery: 'http://bit.ly/ui-workshop'
+  url_gallery: 'http://bit.ly/ui-workshop',
+  price_early_bird: 6500,
+  price_general: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4
 );
 
 Event.create!(
   name: "Fundamental, UI Workshop",
   start_date: Date.new(2017, 01, 21),
+  end_date: Date.today,
   period: '1 Day',
   max_price: '4500',
   low_price: '',
   url: 'https://craftfig.co/courses/fundamental-ui2',
-  url_gallery: 'http://bit.ly/ui-workshop'
+  url_gallery: 'http://bit.ly/ui-workshop',
+  price_early_bird: 6500,
+  price_general: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4
 );
 
 Event.create!(
   name: "80:20, UX Workshop",
   start_date: Date.new(2017, 03, 21),
+  end_date: Date.today,
   period: '2 Day',
   max_price: '9500',
   low_price: '6500',
   url: 'https://www.eventpop.me/e/1139-ux-workshop-march-2017',
-  url_gallery: 'http://bit.ly/uxa_fb_gallery'
+  url_gallery: 'http://bit.ly/uxa_fb_gallery',
+  price_early_bird: 6500,
+  price_general: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4
 );
 
 Event.create!(
   name: "80:20, UX Workshop",
   start_date: Date.new(2017, 07, 21),
+  end_date: Date.today,
   period: '2 Day',
   max_price: '9500',
   low_price: '6500',
   url: 'https://www.eventpop.me/e/1618',
-  url_gallery: 'http://bit.ly/uxa_fb_gallery'
+  url_gallery: 'http://bit.ly/uxa_fb_gallery',
+  price_early_bird: 6500,
+  price_general: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4
 );
