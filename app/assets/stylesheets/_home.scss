@@ -3,7 +3,7 @@
 }
 
 #banner {
-  background-image: image-url('home_banner.jpg');
+  background-image: image-url('banner_home.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top center;
@@ -172,9 +172,21 @@
     text-align: center;
     font-weight: bold;
   }
+  .date-name {
+    display:none;
+  }
   @include media-query($on-palm) {
+    .class-name {
+      text-align: left;
+    }
     .price {
       display:none;
+    }
+    .date {
+      display:none;
+    }
+    .date-name {
+      display:block;
     }
   }
 }
@@ -293,6 +305,9 @@
         height: 50px;
         margin-top: -15px;
         @include border-radius(50%);
+      }
+      p {
+        line-height: 1;
       }
       .profile {
         margin: $spacing-unit/2 auto 0;

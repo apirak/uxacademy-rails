@@ -3,8 +3,8 @@
   <table class="table table-condensed">
     <thead>
       <tr>
-        <th>Course</th>
-        <th>Dates</th>
+        <th class="class-name">Course</th>
+        <th class="date">Dates</th>
         <th class="price">Price</th>
         <th class="price">Early Bird</th>
         <th>Book &amp; Detail</th>
@@ -13,9 +13,11 @@
     <tbody>
       <% @events.each do |event| %>
         <tr>
-          <td><%= event.name %>
+          <td class="class-name">
+            <%= event.name %>
+            <div class="date-name"><%= event.start_date.strftime("%e %B %Y") %></div>
           </td>
-          <td><%= event.start_date.strftime("%e %B %Y") %> </td>
+          <td class="date"><%= event.start_date.strftime("%e %B %Y") %></td>
           <td class="price">
             <%= number_to_currency(event.max_price, :unit => "฿ ") %>
           </td>
@@ -38,60 +40,6 @@
           </td>
         </tr>
       <% end %>
-<!--       <tr>
-        <td>Fundamental, UI Workshop
-        </td>
-        <td>21 Jan, 2017</td>
-        <td class="price">
-          4,500
-        </td>
-        <td class="price">
-          <br/>
-        </td>
-        <td>
-          <a class="btn btn-info"
-             href="http://bit.ly/ui-workshop">
-            <i class="fa fa-file-image-o"></i>
-            Gallery
-          </a><br/>
-        </td>
-      </tr>
-      <tr>
-        <td>80:20, UX Workshop
-        </td>
-        <td>23-24 March, 2017</td>
-        <td class="price">
-          9,500
-        </td>
-        <td class="price">
-          6,500<br/>
-        </td>
-        <td>
-          <a class="btn btn-success"
-             href="http://bit.ly/uxa_fb_gallery">
-            <i class="fa fa-file-image-o"></i>
-            Gallery
-          </a><br/>
-        </td>
-      </tr>
-      <tr>
-        <td>80:20, UX Workshop
-        </td>
-        <td>6-7 July, 2017</td>
-        <td class="price">
-          9,500
-        </td>
-        <td class="price">
-          6,500<br/>
-        </td>
-        <td>
-          <a class="btn btn-success"
-             href="https://www.eventpop.me/e/1618">
-            <i class="fa fa-calendar"></i>
-            More detail
-          </a><br/>
-        </td>
-      </tr> -->
     </tbody>
   </table>
 </div>
