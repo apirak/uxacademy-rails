@@ -1,0 +1,65 @@
+.event {
+  #banner {
+    &.ui {
+      background-image: image-url('banner_ui.jpg');
+    }
+    &.ux {
+      background-image: image-url('banner_ux.jpg');
+    }
+    .banner-content{
+      .banner-text{
+        h1{
+          text-align: center;
+          padding: 0px 0px 0px 0px;
+          @include media-query($on-palm) {
+            text-align: left;
+            padding: 0px 0px 0px 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .hilight {
+    color: #ce0000;
+  }
+
+  .description {
+    @extend .container;
+    .text-content {
+      padding-top: 50px;
+      @extend .col-md-10;
+      @extend .col-md-offset-1;
+    }
+    @include media-query($on-palm) {
+      .text-content {
+        padding-top: 20px;
+      }
+    }
+    img {
+      width: 300px;
+    }
+  }
+
+  .gallery {
+    @extend .container;
+    .preview {
+      @extend .col-md-4;
+      img {
+        width: 100%;
+      }
+    }
+    @include media-query($on-palm) {
+      .preview.best {
+        display:block;
+      }
+      .preview {
+        display:none;
+      }
+    }
+  }
+
+  .ticket {
+    @extend .container;
+  }
+}
