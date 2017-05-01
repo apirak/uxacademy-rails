@@ -175,9 +175,20 @@
   .date-name {
     display:none;
   }
+  .class-name {
+    font-weight: bold;
+    text-align: left;
+  }
+  .date {
+    text-align: left;
+  }
+  .price {
+    text-align: right;
+  }
   @include media-query($on-palm) {
     .class-name {
-      text-align: left;
+      font-size: 20px;
+      font-weight: bold;
     }
     .price {
       display:none;
@@ -187,6 +198,8 @@
     }
     .date-name {
       display:block;
+      font-size: 18px;
+      font-weight: normal;
     }
   }
 }
