@@ -1,12 +1,18 @@
-<div class="name">
-  <%= name %>
-</div>
-<div class="price">
-  <%= price %>
-</div>
-<div class="avaliable">
-  <%= avaliable %>
-</div>
-<div class="description">
-  <%= description %>
+<div class="ticket-row">
+  <div class="name">
+    <%= name %>
+  </div>
+  <div class="price">
+    <%= price %>
+  </div>
+  <div class="avaliable">
+    <%= select_tag :order,
+      options_for_select(
+        (1..avaliable).each { |n|
+          [n,n]
+        }, avaliable) %>
+  </div>
+  <div class="description">
+    <%= description %>
+  </div>
 </div>

@@ -1,29 +1,39 @@
 <div class="event-detail">
   <div class="ticket">
     <h2>Ticket</h2>
+
     <%= render partial: "ticket", locals: {
       name: "Early Bird",
       price: @event.price_early_bird,
-      avaliable: 12,
+      avaliable: 3,
       description: "Pay in 1 day after booking ticket and can not make any cancellation."
     } %>
+
     <%= render partial: "ticket", locals: {
       name: "General",
       price: @event.price_general,
-      avaliable: 12,
+      avaliable: 2,
       description: "Cancellation can be possible 1 month before class."
     } %>
+
     <%= render partial: "ticket", locals: {
       name: "Last Ticket",
       price: @event.price_last_ticket,
-      avaliable: 12,
+      avaliable: 4,
       description: "Cancellation can be possible 1 month before class."
     } %>
-    <button class="btn btn-default" type="submit">Booking</button>
-    <div class="note">
-      Ticket ทั้ง 3 ประเภทไม่มีความแตกต่างในการร่วม Workshop ต่างกันที่ราคาอย่างเดียวครับ :-)<br/>
-      ตัดสินใจก่อนสามารถเลือก Ticket ที่ราคาต่ำกว่าได้ครับ<br/>
-      <i>*ราคารวมค่าอาหารกลางวัน ขนม และ อุปกรณ์สำหรับ Workshop 2 วัน</i>
+
+    <div class="ticket-row">
+      <div class="note">
+        Ticket ทั้ง 3 ประเภทไม่มีความแตกต่างในการร่วม Workshop ต่างกันที่ราคาอย่างเดียวครับ :-)<br/>
+        ราคารวมค่าอาหารกลางวัน ขนม และ อุปกรณ์สำหรับ Workshop 2 วัน
+      </div>
+      <div class="submit">
+        <button class="btn" type="submit">
+          Booking
+        </button>
+      </div>
+    </div>
     </p>
   </div>
 </div>
