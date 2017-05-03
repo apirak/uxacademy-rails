@@ -123,7 +123,7 @@ Event.create!(
 
 Event.create!(
   name: "80:20, UX Workshop",
-  start_date: Date.new(2017, 03, 21),
+  start_date: Date.new(2017, 03, 23),
   end_date: Date.today,
   period: '2 Day',
   max_price: '9500',
@@ -140,7 +140,7 @@ Event.create!(
 
 Event.create!(
   name: "80:20, UX Workshop",
-  start_date: Date.new(2017, 07, 21),
+  start_date: Date.new(2017, 07, 6),
   end_date: Date.today,
   period: '2 Day',
   max_price: '9500',

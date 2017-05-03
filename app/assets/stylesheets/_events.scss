@@ -50,9 +50,12 @@
       .price {
         @extend .col-md-3;
         @extend .col-xs-6;
+        font-weight: bold;
+        text-align: right;
       }
       .avaliable {
         @extend .col-md-3;
+        text-align: right;
         select {
           @extend .form-control;
         }
@@ -67,16 +70,15 @@
       }
       .submit {
         @extend .col-md-3;
-        button {
+        a.new-order {
           @extend .form-control;
           @extend .btn;
           @extend .btn-success;
         }
       }
       @include media-query($on-palm) {
-        .price {
-          text-align: right;
-          font-weight: bold;
+        .avaliable {
+          text-align: left;
         }
       }
     }
@@ -88,6 +90,9 @@
     }
     img {
       width: 300px;
+    }
+    &.last {
+      padding-bottom: 50px;
     }
   }
 

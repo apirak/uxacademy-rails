@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430020813) do
+ActiveRecord::Schema.define(version: 20170501170050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,9 +72,31 @@ ActiveRecord::Schema.define(version: 20170430020813) do
     t.decimal  "max_general"
     t.decimal  "max_last_ticket"
     t.decimal  "price_early_bird"
-    t.decimal  "price_general"
+    t.decimal  "price_regular"
     t.decimal  "price_last_ticket"
     t.datetime "end_date"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "condition"
+    t.boolean  "wht"
+    t.string   "company_name"
+    t.text     "company_address"
+    t.string   "company_tax_id"
+    t.decimal  "ticket_early_bird"
+    t.decimal  "ticket_regular"
+    t.decimal  "ticket_last_ticket"
+    t.string   "payment_status"
+    t.string   "payment_id"
+    t.string   "payment_total"
+    t.string   "payment_method"
+    t.string   "payment_description"
+    t.datetime "payment_date"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end

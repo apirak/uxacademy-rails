@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
   def show
+    @order = Order.new
   end
 
   private

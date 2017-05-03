@@ -6,9 +6,9 @@
     <%= number_to_currency(price, :unit => "฿ ") %>
   </div>
   <div class="avaliable">
-    Avaliable
-    <%= avaliable %>
-    <%= "Ticket".pluralize(avaliable) %>
+    <%= f.select method,
+      options_for_select((0..avaliable).each { |n| [n,n] },
+      avaliable) %>
   </div>
   <div class="description">
     <%= description %>
