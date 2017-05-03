@@ -5,7 +5,7 @@
 @import "owl.theme";
 
 $base-font-family: 'THSarabunNew', sans-serif;
-$base-font-size:   230%;
+$base-font-size:   150%;
 
 $small-font-size:  1em;
 $big-font-size:    1.3em;
@@ -56,4 +56,5 @@ $nav-height:       50px;
 @import "footer";
 @import "syntax-highlighting";
 @import "table";
-@import "events"
+@import "events";
+@import "order";

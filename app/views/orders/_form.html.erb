@@ -11,29 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone %>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :condition %>
-    <%= f.text_area :condition %>
+    <%= f.text_area :condition, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :wht %>
-    <%= f.check_box :wht %>
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :wht %> <%= f.label :wht %>
+    </label>
   </div>
 
   <div class="field">

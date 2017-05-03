@@ -1,0 +1,40 @@
+.order {
+  .banner {
+    height: 115px;
+    background-position-y: 50%;
+    background-image: image-url('banner_presentation.jpg');
+    @include media-query($on-laptop) {
+      background-size: 150% auto;
+    }
+  }
+
+  .new-order {
+    @extend .container;
+  }
+
+  .content {
+    @include easyread-layout;
+    h1{
+      color: $text-bold-color;
+    }
+    .post-meta {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    .content {
+      h1 {
+        font-size: $large-font-size-mobile;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .post-header {
+    @extend .container;
+    margin-top: $spacing-unit;
+  }
+
+
+}

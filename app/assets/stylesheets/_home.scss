@@ -187,8 +187,7 @@
   }
   @include media-query($on-palm) {
     .class-name {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 14px;
     }
     .price {
       display:none;
@@ -198,7 +197,7 @@
     }
     .date-name {
       display:block;
-      font-size: 18px;
+      font-size: 13px;
       font-weight: normal;
     }
   }
