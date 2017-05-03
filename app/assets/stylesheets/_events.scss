@@ -26,10 +26,30 @@
 
   .event-detail {
     @extend .container;
+    h1 {
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
     .text-content {
       padding-top: 50px;
       @extend .col-md-10;
       @extend .col-md-offset-1;
+      h1:first-child {
+        margin-top: 0px;
+      }
+    }
+    .image-one {
+      @extend .col-md-6;
+      @extend .col-xs-12;
+      img {
+        width: 100%;
+      }
+      &.large {
+        @extend .col-md-12;
+      }
+    }
+    &.last {
+      padding-bottom: 50px;
     }
 
     .ticket {
@@ -84,6 +104,9 @@
     }
 
     @include media-query($on-palm) {
+      h1 {
+        font-size: 25px;
+      }
       .text-content {
         padding-top: 20px;
       }
@@ -95,12 +118,6 @@
         padding-bottom: 20px;
         padding-top: 10px;
       }
-    }
-    img {
-      width: 300px;
-    }
-    &.last {
-      padding-bottom: 50px;
     }
   }
 
@@ -118,6 +135,9 @@
       }
       .preview {
         display:none;
+      }
+      .row {
+        padding: 0px 15px 0px 15px;
       }
     }
   }
