@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501170050) do
+ActiveRecord::Schema.define(version: 20170505213415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20170501170050) do
     t.string   "url_gallery"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "type"
+    t.string   "category"
     t.decimal  "max_early_bird"
     t.decimal  "max_general"
     t.decimal  "max_last_ticket"

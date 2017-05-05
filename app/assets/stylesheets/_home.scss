@@ -185,6 +185,24 @@
   .price {
     text-align: right;
   }
+  .detail {
+    &.alive {
+      a {
+        @extend .btn-success;
+      }
+      i {
+        @extend .fa-calendar;
+      }
+    }
+    &.expired {
+      a {
+        @extend .btn-info;
+      }
+      i {
+        @extend .fa-file-image-o;
+      }
+    }
+  }
   @include media-query($on-palm) {
     .class-name {
       font-size: 14px;
