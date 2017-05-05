@@ -115,7 +115,7 @@
         <li>ปรับปรุง UI และทดสอบการใช้งานเบื้องต้น</li>
       </ul>
 
-      <h2>Location</h2>
+      <h1>Location</h1>
       <p>FabCafe Bangkok Phahonyothin Road Bangkok Thailand</p>
       <div class="row">
         <div class="image-one large">
@@ -125,7 +125,12 @@
     </div>
   </div>
 
-  <%= render "tickets", order: @order %>
+  <div class="event-detail">
+    <div class="ticket">
+      <h2>Ticket</h2>
+      <%= render "shared/tickets", order: @order %>
+    </div>
+  </div>
 
   <div class="event-detail last">
     <div class="text-content">

@@ -10,6 +10,13 @@
 
   .new-order {
     @extend .container;
+    padding-bottom: 50px;
+
+    .submit {
+      @extend .col-md-3;
+      @extend .col-xs-12;
+      margin-top: $spacing-unit;
+    }
   }
 
   .content {

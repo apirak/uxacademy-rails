@@ -37,67 +37,28 @@
     </label>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company_name %>
-    <%= f.text_field :company_name %>
+    <%= f.text_field :company_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company_address %>
-    <%= f.text_area :company_address %>
+    <%= f.text_area :company_address, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company_tax_id %>
-    <%= f.text_field :company_tax_id %>
+    <%= f.text_field :company_tax_id, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :ticket_early_bird %>
-    <%= f.text_field :ticket_early_bird %>
-  </div>
 
-  <div class="field">
-    <%= f.label :ticket_regular %>
-    <%= f.text_field :ticket_regular %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ticket_last_ticket %>
-    <%= f.text_field :ticket_last_ticket %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_status %>
-    <%= f.text_field :payment_status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_id %>
-    <%= f.text_field :payment_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_total %>
-    <%= f.text_field :payment_total %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_method %>
-    <%= f.text_field :payment_method %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_description %>
-    <%= f.text_field :payment_description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :payment_date %>
-    <%= f.datetime_select :payment_date %>
+  <div class="ticket-create">
+    <h2>Tickets</h2>
+    <%= render "shared/tickets", order: @order %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>
   </div>
 <% end %>

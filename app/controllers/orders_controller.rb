@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @event = Event.find(params[:event])
   end
 
   def payment

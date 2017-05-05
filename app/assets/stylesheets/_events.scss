@@ -52,57 +52,6 @@
       padding-bottom: 50px;
     }
 
-    .ticket {
-      padding-top: 50px;
-      @extend .col-md-10;
-      @extend .col-md-offset-1;
-      .ticket-row {
-        @extend .row;
-        border-top: 2px solid #CCC;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-      .name {
-        @extend .col-md-6;
-        @extend .col-xs-6;
-        font-weight: bold;
-      }
-      .price {
-        @extend .col-md-3;
-        @extend .col-xs-6;
-        font-weight: bold;
-        text-align: right;
-      }
-      .avaliable {
-        @extend .col-md-3;
-        text-align: right;
-        select {
-          @extend .form-control;
-        }
-      }
-      .description {
-        @extend .col-md-12;
-        font-size: 12px;
-      }
-      .note {
-        @extend .col-md-9;
-        font-size: 12px;
-      }
-      .submit {
-        @extend .col-md-3;
-        a.new-order {
-          @extend .form-control;
-          @extend .btn;
-          @extend .btn-success;
-        }
-      }
-      @include media-query($on-palm) {
-        .avaliable {
-          text-align: left;
-        }
-      }
-    }
-
     @include media-query($on-palm) {
       h1 {
         font-size: 25px;
