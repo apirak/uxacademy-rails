@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <div class="ticket-create">
+    <h2>Tickets</h2>
+    <%= render "shared/tickets", order: @order %>
+  </div>  
+
+  <h2>TicketBuyer</h2>
+
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
@@ -33,30 +40,36 @@
 
   <div class="checkbox">
     <label>
-      <%= f.check_box :wht %> <%= f.label :wht %>
+      <%= f.check_box :wht, class: "order-wht" %> <%= f.label :wht, "Has Withholding Tax" %>
     </label>
   </div>
 
-  <div class="form-group">
-    <%= f.label :company_name %>
-    <%= f.text_field :company_name, class: "form-control" %>
+  <div class="wht">
+
+    <h3>Please provide a withholding tax form for.</h3>
+    <p>
+      Kaewkanya Narkjarung (Tax ID: 3102002088075)<br/>
+      8/66 moo 6 Salatammasop road<br/>
+      Kweng Salatammasop Bangkok 10170
+    </p>
+
+    <div class="form-group">
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :company_address %>
+      <%= f.text_area :company_address, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :company_tax_id %>
+      <%= f.text_field :company_tax_id, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :company_address %>
-    <%= f.text_area :company_address, class: "form-control" %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label :company_tax_id %>
-    <%= f.text_field :company_tax_id, class: "form-control" %>
-  </div>
-
-
-  <div class="ticket-create">
-    <h2>Tickets</h2>
-    <%= render "shared/tickets", order: @order %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>
