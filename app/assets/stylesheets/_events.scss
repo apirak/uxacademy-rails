@@ -91,5 +91,12 @@
     }
   }
 
+  .submit {
+    @extend .col-md-3;
+    @extend .col-xs-12;
+    button {
+      width: 100%;
+    }
+  }
 
 }

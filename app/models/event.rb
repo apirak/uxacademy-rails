@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_many :orders
+
   delegate :url_helpers, to: 'Rails.application.routes'
 
   def detail_url

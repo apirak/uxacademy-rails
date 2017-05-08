@@ -1,0 +1,14 @@
+<div class="ticket-row">
+  <div class="name">
+    <%= name %>
+  </div>
+  <div class="price">
+    <%= number_to_currency(price, :unit => "฿ ") %>
+  </div>
+  <div class="avaliable">
+    <%= ticket_order.round %>
+  </div>
+  <div class="description">
+    <%= description %>
+  </div>
+</div>
