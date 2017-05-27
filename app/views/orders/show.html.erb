@@ -1,89 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="order">
+  <div class="banner"></div>
+  <header class="post-header">
+    <div class="content">
+      <h1>Payment</h1>
+    </div>
+  </header>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
+  <div class="new-order">
+    <div class="content">
+      <form name="checkoutForm" method="POST" action="checkout.php">
+        <button type="submit" id="checkout-button-1">My Checkout Button !</button>
+      </form>
 
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
+      <br/>
+      or<br/>
+      <br/>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @order.phone %>
-</p>
+      Contact Kaewkanya@gmail.com when you compleate transfer money
+    </div>
+  </div>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @order.condition %>
-</p>
-
-<p>
-  <strong>Wht:</strong>
-  <%= @order.wht %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @order.company_name %>
-</p>
-
-<p>
-  <strong>Company address:</strong>
-  <%= @order.company_address %>
-</p>
-
-<p>
-  <strong>Company tax:</strong>
-  <%= @order.company_tax_id %>
-</p>
-
-<p>
-  <strong>Ticket early bird:</strong>
-  <%= @order.ticket_early_bird %>
-</p>
-
-<p>
-  <strong>Ticket regular:</strong>
-  <%= @order.ticket_regular %>
-</p>
-
-<p>
-  <strong>Ticket last ticket:</strong>
-  <%= @order.ticket_last_ticket %>
-</p>
-
-<p>
-  <strong>Payment status:</strong>
-  <%= @order.payment_status %>
-</p>
-
-<p>
-  <strong>Payment:</strong>
-  <%= @order.payment_id %>
-</p>
-
-<p>
-  <strong>Payment total:</strong>
-  <%= @order.payment_total %>
-</p>
-
-<p>
-  <strong>Payment method:</strong>
-  <%= @order.payment_method %>
-</p>
-
-<p>
-  <strong>Payment description:</strong>
-  <%= @order.payment_description %>
-</p>
-
-<p>
-  <strong>Payment date:</strong>
-  <%= @order.payment_date %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+</div>

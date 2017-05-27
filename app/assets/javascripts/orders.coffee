@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+ready = ->
+  OmiseCard.configure
+    publicKey: 'YOUR_PUBLIC_KEY'
+    image: 'https://c1.staticflickr.com/5/4220/34090378444_fc5b319741_t.jpg'
+    amount: 99500
+
+  OmiseCard.configureButton '#checkout-button-1',
+    frameLabel: 'UX Academy'
+    submitLabel: 'PAY NOW :'
+
+  OmiseCard.attach()
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

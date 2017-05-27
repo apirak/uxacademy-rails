@@ -14,9 +14,9 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { render :payment, notice: 'Order was successfully create' }
+        format.html { render :show, notice: 'Order was successfully create' }
       else
-        format.html { render :new}
+        format.html { render :new }
       end
     end
   end
