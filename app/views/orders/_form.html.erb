@@ -1,13 +1,11 @@
 <%= form_for(order) do |f| %>
   <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger">
+      <strong>
+        <%= pluralize(order.errors.count, "error") %>:
+      </strong>
 
-      <ul>
-      <% order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <%= @order.errors.full_messages.map{|m| m}.join(", ") %>
     </div>
   <% end %>
 
@@ -68,6 +66,11 @@
   </div>
 
   <div class="actions">
+    <%= f.hidden_field(:event_id) %>
+    <%= f.hidden_field(:ticket_early_bird) %>
+    <%= f.hidden_field(:ticket_regular) %>
+    <%= f.hidden_field(:ticket_last_ticket) %>
+
     <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>
   </div>
 <% end %>

@@ -13,7 +13,6 @@
   .price {
     @extend .col-md-3;
     @extend .col-xs-4;
-    font-weight: bold;
     text-align: right;
   }
   .avaliable {
@@ -24,10 +23,18 @@
       @extend .form-control;
     }
   }
+  .total {
+    @extend .col-md-6;
+    @extend .col-xs-6;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+  }
   .description {
     @extend .col-md-12;
     font-size: 12px;
     padding-top: 20px;
+    color: $grey-color-light;
   }
   .note {
     @extend .col-md-9;

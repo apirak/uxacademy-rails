@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @event = @order.event
 
     respond_to do |format|
       if @order.save

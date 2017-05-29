@@ -62,5 +62,6 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'owlcarousel-rails'
 gem 'typedjs-rails'
+gem 'validates_email_format_of'
 
 gem 'omise'

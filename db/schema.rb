@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508164208) do
+ActiveRecord::Schema.define(version: 20170529222841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,21 +82,21 @@ ActiveRecord::Schema.define(version: 20170508164208) do
     t.string   "email"
     t.string   "phone"
     t.text     "condition"
-    t.boolean  "wht"
+    t.boolean  "wht",                 default: false
     t.string   "company_name"
     t.text     "company_address"
     t.string   "company_tax_id"
-    t.decimal  "ticket_early_bird"
-    t.decimal  "ticket_regular"
-    t.decimal  "ticket_last_ticket"
+    t.decimal  "ticket_early_bird",   default: "0.0"
+    t.decimal  "ticket_regular",      default: "0.0"
+    t.decimal  "ticket_last_ticket",  default: "0.0"
     t.string   "payment_status"
     t.string   "payment_id"
     t.string   "payment_total"
     t.string   "payment_method"
     t.string   "payment_description"
     t.datetime "payment_date"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "event_id"
   end
 

@@ -18,3 +18,13 @@
   ticket_order: @order.ticket_last_ticket,
   description: "Cancellation can be possible 1 month before class."
 } %>
+
+<div class="ticket-row">
+  <div class="name">
+    Total
+  </div>
+  <div class="total">
+    <%= number_to_currency(@order.total, :unit => "฿ ") %>
+  </div>
+
+</div>
