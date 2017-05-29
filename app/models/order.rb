@@ -12,6 +12,14 @@ class Order < ApplicationRecord
   end
 
   def calculate_wht
-    (total / 100) * 7
+    (total / 100) * 3
+  end
+
+  def grand_total
+    if wht
+      total + calculate_wht
+    else
+      total
+    end
   end
 end

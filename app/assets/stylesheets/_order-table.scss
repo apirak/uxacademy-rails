@@ -36,6 +36,10 @@
     padding-top: 20px;
     color: $grey-color-light;
   }
+  .summary {
+    @extend .row;
+    margin-top: 10px;
+  }
   .note {
     @extend .col-md-9;
     font-size: 12px;

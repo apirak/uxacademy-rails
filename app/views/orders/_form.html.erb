@@ -29,13 +29,8 @@
     <%= f.text_area :condition, class: "form-control"  %>
   </div>
 
-  <div class="checkbox">
-    <label>
-      <%= f.check_box :wht, class: "order-wht" %> <%= f.label :wht, "Has Withholding Tax" %>
-    </label>
-  </div>
 
-  <div class="wht">
+  <% if @order.wht %>
 
     <h3>Please provide a withholding tax form for.</h3>
     <p>
@@ -58,7 +53,8 @@
       <%= f.label :company_tax_id %>
       <%= f.text_field :company_tax_id, class: "form-control" %>
     </div>
-  </div>
+
+  <% end %>
 
   <div class="order-ticket">
     <h2>Summary</h2>

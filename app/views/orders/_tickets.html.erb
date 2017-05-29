@@ -19,11 +19,32 @@
   description: "Cancellation can be possible 1 month before class."
 } %>
 
+<% if @order.wht %>
+  <div class="summary">
+    <div class="name">
+      Total
+    </div>
+    <div class="total">
+      <%= number_to_currency(@order.total, :unit => "฿ ") %>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="name">
+      WHT
+    </div>
+    <div class="total">
+      <%= number_to_currency(@order.calculate_wht, :unit => "฿ ") %>
+    </div>
+  </div>
+<% end %>
+
 <div class="ticket-row">
   <div class="name">
-    Total
+    Grand Total
   </div>
   <div class="total">
-    <%= number_to_currency(@order.total, :unit => "฿ ") %>
+    <%= number_to_currency(@order.grand_total, :unit => "฿ ") %>
   </div>
 </div>
+
