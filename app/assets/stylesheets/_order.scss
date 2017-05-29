@@ -1,4 +1,8 @@
 .order {
+  h2 {
+    margin-top: 40px;
+  }
+
   .banner {
     height: 115px;
     background-position-y: 50%;
@@ -13,7 +17,7 @@
     padding-bottom: 50px;
 
     .submit {
-      @extend .col-md-3;
+      @extend .col-md-12;
       @extend .col-xs-12;
       margin-top: $spacing-unit;
     }

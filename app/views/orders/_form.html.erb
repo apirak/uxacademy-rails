@@ -11,13 +11,6 @@
     </div>
   <% end %>
 
-  <div class="ticket-create">
-    <h2>Tickets</h2>
-    <%= render "tickets", order: @order %>
-  </div>
-
-  <h2>TicketBuyer</h2>
-
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
@@ -69,7 +62,10 @@
     </div>
   </div>
 
-
+  <div class="order-ticket">
+    <h2>Summary</h2>
+    <%= render "tickets", order: @order %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>

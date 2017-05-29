@@ -1,23 +1,8 @@
-.ticket {
-  padding-top: 50px;
-  @extend .col-md-10;
-  @extend .col-md-offset-1;
-}
-
-.ticket-create {
-  .submit {
-    display: none;
-  }
-  .note {
-    display: none;
-  }
-}
-
-.ticket, .order {
+.order-ticket {
   .ticket-row {
     @extend .row;
-    border-top: 2px solid #CCC;
-    padding-top: 20px;
+    border-bottom: 2px solid #CCC;
+    padding-bottom: 20px;
     margin-top: 20px;
   }
   .name {
@@ -27,12 +12,13 @@
   }
   .price {
     @extend .col-md-3;
-    @extend .col-xs-6;
+    @extend .col-xs-4;
     font-weight: bold;
     text-align: right;
   }
   .avaliable {
     @extend .col-md-3;
+    @extend .col-xs-2;
     text-align: right;
     select {
       @extend .form-control;
@@ -41,7 +27,7 @@
   .description {
     @extend .col-md-12;
     font-size: 12px;
-    padding-top: 5px;
+    padding-top: 20px;
   }
   .note {
     @extend .col-md-9;

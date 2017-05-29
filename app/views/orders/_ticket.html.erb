@@ -1,14 +1,16 @@
-<div class="ticket-row">
-  <div class="name">
-    <%= name %>
+<% if ticket_order > 0 %>
+  <div class="ticket-row">
+    <div class="name">
+      <%= name %>
+    </div>
+    <div class="price">
+      <%= number_to_currency(price, :unit => "฿ ") %>
+    </div>
+    <div class="avaliable">
+      <%= ticket_order.round %>
+    </div>
+    <div class="description">
+      <%= description %>
+    </div>
   </div>
-  <div class="price">
-    <%= number_to_currency(price, :unit => "฿ ") %>
-  </div>
-  <div class="avaliable">
-    <%= ticket_order.round %>
-  </div>
-  <div class="description">
-    <%= description %>
-  </div>
-</div>
+<% end %>

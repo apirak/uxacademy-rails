@@ -18,17 +18,3 @@
   ticket_order: @order.ticket_last_ticket,
   description: "Cancellation can be possible 1 month before class."
 } %>
-
-<div class="ticket-row">
-  <div class="note">
-    Ticket ทั้ง 3 ต่างกันที่ราคาอย่างเดียวครับ :-)
-    โดยราคานี้จะรวมค่าอาหารกลางวัน ขนม และ อุปกรณ์สำหรับ Workshop ทั้ง 2 วัน
-  </div>
-  <div class="submit">
-    <%= link_to new_order_path(:event => @event.id),
-      class: "new-order" do %>
-      <i class="fa fa-ticket"></i>
-      Booking
-    <% end %>
-  </div>
-</div>
