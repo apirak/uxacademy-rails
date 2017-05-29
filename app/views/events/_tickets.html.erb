@@ -27,6 +27,15 @@
   } %>
 
   <div class="ticket-row">
+    <div class="checkbox">
+      <%= f.label :wht do %>
+        <%= f.check_box :wht, class: "order-wht" %>
+        Has Withholding Tax (will plus 3% from total prices)
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ticket-row">
     <div class="note">
       Ticket ทั้ง 3 ต่างกันที่ราคาอย่างเดียวครับ :-)
       โดยราคานี้จะรวมค่าอาหารกลางวัน ขนม และ อุปกรณ์สำหรับ Workshop ทั้ง 2 วัน

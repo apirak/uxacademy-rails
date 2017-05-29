@@ -10,4 +10,8 @@ class Order < ApplicationRecord
     total += event.price_regular * ticket_regular
     total += event.price_last_ticket * ticket_last_ticket
   end
+
+  def calculate_wht
+    (total / 100) * 7
+  end
 end
