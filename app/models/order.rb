@@ -5,6 +5,8 @@ class Order < ApplicationRecord
   validates :email, :email_format => { :message => 'is not looking good' }
   validates :event, presence: true
 
+  validates :company_name, :company_address, :company_tax_id, presence: true, if: 'wht.present?'
+
   def total
     total = event.price_early_bird * ticket_early_bird
     total += event.price_regular * ticket_regular
@@ -17,7 +19,7 @@ class Order < ApplicationRecord
 
   def grand_total
     if wht
-      total + calculate_wht
+      total - calculate_wht
     else
       total
     end

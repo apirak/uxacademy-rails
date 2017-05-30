@@ -10,47 +10,49 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name , class: "control-label" %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label :email , class: "control-label" %>
     <%= f.text_field :email, class: "form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :phone %>
+    <%= f.label :phone , class: "control-label" %>
     <%= f.text_field :phone, class: "form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :condition %>
+    <%= f.label :condition , class: "control-label" %>
     <%= f.text_area :condition, class: "form-control"  %>
   </div>
 
 
   <% if @order.wht %>
 
-    <h3>Please provide a withholding tax form for.</h3>
+    <h2>Withholding Tax</h2>
     <p>
+      Please provide a withholding tax form for
+
       Kaewkanya Narkjarung (Tax ID: 3102002088075)<br/>
       8/66 moo 6 Salatammasop road<br/>
       Kweng Salatammasop Bangkok 10170
     </p>
 
     <div class="form-group">
-      <%= f.label :company_name %>
+      <%= f.label :company_name , class: "control-label" %>
       <%= f.text_field :company_name, class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :company_address %>
+      <%= f.label :company_address , class: "control-label" %>
       <%= f.text_area :company_address, class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :company_tax_id %>
+      <%= f.label :company_tax_id, class: "control-label" %>
       <%= f.text_field :company_tax_id, class: "form-control" %>
     </div>
 
@@ -63,6 +65,7 @@
 
   <div class="actions">
     <%= f.hidden_field(:event_id) %>
+    <%= f.hidden_field(:wht) %>
     <%= f.hidden_field(:ticket_early_bird) %>
     <%= f.hidden_field(:ticket_regular) %>
     <%= f.hidden_field(:ticket_last_ticket) %>
