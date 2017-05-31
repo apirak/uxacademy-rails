@@ -11,119 +11,19 @@
 
   <div class="event-detail">
     <div class="text-content">
-      <h1>COURSE DESCRIPTION</h1>
-      <p>
-        งานออกแบบ UI นั้นต่างจากงานออกแบบสิ่งพิมพ์ หรือออกแบบโฆษณาออนไลน์
-        เพราะบริบทของผู้ใช้ไม่เหมือนกัน ความคาดหวังต่อตัวงานก็จะไม่เหมือนกัน
-        งานสิ่งพิมพ์นั้นตัวผลงานมีเวลาอยู่กับผู้ใช้นานแต่ผู้ใช้มักผ่านมารอบเดียว
-        ส่วนงาน UI นั้น<font class="hilight">ผู้ใช้มีเวลาสั้นมากไม่ถึง 5 วินาที</font>
-        แต่ผู้ใช้มักจะผ่านมาใช้มันหลายรอบ
-      </p>
-      <p>
-        ดังนั้นการพบกันครั้งแรกจึงสำคัญมาก ๆ (First Impression) ถ้าเราสามารถทำให้ผู้ใช้เข้าใจได้ในทันทีที่เห็น
-        ก็จะลดความเสี่ยงที่ผู้ใช้จะลบโปรแกรมของเราทิ้งได้มาก หรือทำให้เขาอยากเข้ามาใช้เว็บของเราบ่อย ๆ
-      </p>
-      <p>
-        การจะทำแบบนั้นมันไม่ใช่เรื่องยาก เราต้องอาศัยสิ่งที่ผู้ใช้เรียนรู้ไปแล้วตั้งแต่ก่อนที่จะใช้โปรแกรม
-        ของเราให้เป็นประโยชน์ เราเรียกว่า (<font class="hilight">World Experience</font>)
-        เราต้องรู้ว่าผู้ใช้เรียนอะไรไบแล้ว ในแต่ละระบบทั้ง Windows OSX iOS
-        หรือ Android รวมถึงลำดับการจัดลำดับข้อมูลที่ตรงกับผู้ใช้คาดหวัง
-        ให้ผู้ใช้สามารถบริโภคข้อมูลให้ง่ายที่สุด
-        (<font class="hilight">Information Architech</font>)
-      </p>
-      <p>
-        ใน Workshop นี้ผู้เรียนจะได้ลองคิดถึงพื้นฐานในการออกแบบ UI ตั้งแต่แนวคิดพื้นฐาน การวาด
-        Wireframe อย่างเร็ว และวาด Wireframe ที่พร้อมสำหรับส่งให้ลูกค้า หรือส่งต่อให้ Graphic Designer
-        รวมถึงการวิเคราะ์ UI เพื่อปรับปรุงโปรแกรมให้ดีขึ้นเรื่อย ๆ (<font class="hilight">Usability Critique</font>)
-      </p>
-      <p>
-        ทำความเข้าใจ UX เพิ่มเติมผ่าน <a href="blog.uxacademy.in.th">blog</a> ของเราครับ
-      </p>
+      <%= raw @event.course_description %>
     </div>
   </div>
 
   <div class="gallery">
     &nbsp;
-    <div class="row">
-      <div class="preview best"><%= image_tag('ui_gallery_1.jpg') %></div>
-      <div class="preview"><%= image_tag('ui_gallery_2.jpg') %></div>
-      <div class="preview"><%= image_tag('ui_gallery_3.jpg') %></div>
-    </div>
+    <%= raw @event.course_gallery %>
     &nbsp;
   </div>
 
   <div class="event-detail">
     <div class="text-content">
-      <h1>Instructure</h1>
-      <div class="row">
-        <div class="image-one"><%= image_tag "apirak.jpg" %></div>
-      </div>
-      <br/><br/>
-      <p>
-        Apirak Panatkool&nbsp;
-        <%= link_to "short profile", "http://goo.gl/yazlwk" %>&nbsp;
-        <%= link_to "LinkedIn", "https://www.linkedin.com/in/apirak" %>
-      </p>
-      <p>
-        Apirak currently works as a UX Evangelist at Omise Payment Gateway.
-        Previously he was the UX Coach at Ascend Group (Truemoney,
-        iTruemart, WeLoveShopping).
-      </p>
-      <p>
-        He’s a big believer that great user experience comes from everyone
-        working as part of a team, not only for designers.
-      </p>
-      <p>
-        Apirak is also the co-founder of UXinThai, one of the biggest
-        UX community on Facebook in Thailand. He is also the co-founder of
-        UX Academy. Apirak loves to see people with different talent working
-        together and he thinks user experience is the key that makes it happen.
-      </p>
-
-      <h1>Who Should Attend</h1>
-      <ul>
-        <li>QA เพื่อศึกษาการควบคุมคุณภาพ ที่ไม่ใช่หา Bug<br></li>
-        <li>UI Designer ที่ต้องการศึกษาความรู้เพิ่มเติม</li>
-        <li>Graphic Designer ที่ต้องการเข้าใจความแต่ต่างของ UI กับงาน Digital Graphic</li>
-        <li>Print Designer ที่ต้องการเร่งความเร็วเพื่อเข้าสู่โลกของ UI</li>
-        <li>DEV / PM / PO / AE ที่ต้องการสื่อสารกับทีม</li>
-      </ul>
-
-      <h1>Objective</h1>
-      <ul>
-        <li>เข้าใจเรื่อง Information Architect สามารถนำมาประยุกต์ใช้ เพื่อลดความเสี่ยงของโปรแกรมได้</li>
-        <li>สามารถวิเคราะห์ความแตกต่างของ UI สำหรับผู้ใช้แต่ละประเภทได้</li>
-        <li>เข้าใจพื้นฐานการออกแบบ ที่ต่างกันบนแต่ละ Platform (iOS, Android, Web, Desktop App)</li>
-        <li>สามารถเลือกใช้เทคนิคการวาด Wireframe ให้เหมาะสมกับแต่ละงาน</li>
-        <li>สามารถวิเคราะห์ปัญหาของ UI ได้ (Usability Critique)</li>
-      </ul>
-
-      <h1>Schedule (9:30 - 17:00)</h1>
-      วันที่ 1: UI Fundamental: เรียนรู้และฝึกฝนการออกแบบ UI
-      <ul>
-        <li>Design principle for UI</li>
-        <li>Information Architect</li>
-        <li>Foundation of Wireframe</li>
-        <li>Critique UI Workshop</li>
-        <li>Concept of Flow and Object relation</li>
-        <li>Usability Workshop</li>
-      </ul>
-      วันที่ 2: Usability Critique: นำ UI ทั้งของในประเทศ และต่างประเทศมาเป็นโจทย์ในการออกแบบ
-      <ul>
-        <li>UI Case Study</li>
-        <li>วิเคราะห์ Information Architect</li>
-        <li>วิเคราะห์ Persona และ User Journey</li>
-        <li>วิเคราะห์ Design Guideline</li>
-        <li>ปรับปรุง UI และทดสอบการใช้งานเบื้องต้น</li>
-      </ul>
-
-      <h1>Location</h1>
-      <p>FabCafe Bangkok Phahonyothin Road Bangkok Thailand</p>
-      <div class="row">
-        <div class="image-one large">
-          <%= image_tag "fabcafe.png" %>
-        </div>
-      </div>
+      <%= raw @event.course_description_2 %>
     </div>
   </div>
 

@@ -4,7 +4,8 @@ ActiveAdmin.register Event do
 #
 permit_params :name, :start_date, :period, :max_price, :low_price, :url,
               :url_gallery, :max_early_bird, :max_general, :max_last_ticket,
-              :end_date
+              :end_date, :description, :course_description, :course_gallery,
+              :course_description_2, :category
 
 index do
   selectable_column

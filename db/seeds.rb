@@ -176,3 +176,47 @@ Event.create!(
   max_last_ticket: 4,
   category: 'ux'
 );
+
+Event.create!(
+  name: "80:20, UX Workshop",
+  description: "strategic design to make user happiest",
+  course_description: "HTML",
+  course_gallery: "HTML",
+  course_description_2: "HTML",
+  start_date: Date.new(2017, 07, 6),
+  end_date: Date.today,
+  period: '2 Day',
+  max_price: '9500',
+  low_price: '6500',
+  url: '',
+  url_gallery: 'http://bit.ly/uxa_fb_gallery',
+  price_early_bird: 6500,
+  price_regular: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4,
+  category: 'ux'
+);
+
+Event.create!(
+  name: "SPEED, UI WORKSHOP",
+  description: "Don't make user think",
+  course_description: "HTML",
+  course_gallery: "HTML",
+  course_description_2: "HTML",
+  start_date: Date.new(2017, 07, 6),
+  end_date: Date.today,
+  period: '2 Day',
+  max_price: '9500',
+  low_price: '6500',
+  url: '',
+  url_gallery: 'http://bit.ly/uxa_fb_gallery',
+  price_early_bird: 6500,
+  price_regular: 8500,
+  price_last_ticket: 9500,
+  max_early_bird: 4,
+  max_general: 4,
+  max_last_ticket: 4,
+  category: 'ux'
+);

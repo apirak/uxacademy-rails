@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529222841) do
+ActiveRecord::Schema.define(version: 20170531171034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,8 @@ ActiveRecord::Schema.define(version: 20170529222841) do
     t.decimal  "low_price"
     t.string   "url"
     t.string   "url_gallery"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "category"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.decimal  "max_early_bird"
     t.decimal  "max_general"
     t.decimal  "max_last_ticket"
@@ -75,6 +74,11 @@ ActiveRecord::Schema.define(version: 20170529222841) do
     t.decimal  "price_regular"
     t.decimal  "price_last_ticket"
     t.datetime "end_date"
+    t.text     "description"
+    t.text     "course_description"
+    t.text     "course_gallery"
+    t.text     "course_description_2"
+    t.string   "category"
   end
 
   create_table "orders", force: :cascade do |t|
