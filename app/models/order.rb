@@ -24,4 +24,8 @@ class Order < ApplicationRecord
       total
     end
   end
+
+  def grand_total_satang
+    grand_total * 100
+  end
 end
