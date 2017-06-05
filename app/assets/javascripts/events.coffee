@@ -1,8 +1,12 @@
 ready = ->
+  console.log("d");
   $('.ticket-select').change 'ticket-selected', ->
+    console.log("a");
     if ticket_selected()
+      console.log("b");
       $('#preview-order-button').removeAttr("disabled")
     else
+      console.log("c");
       $('#preview-order-button').attr("disabled", "true")
 
 
@@ -17,4 +21,4 @@ ticket_selected = ->
 
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)
