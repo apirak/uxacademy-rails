@@ -11,16 +11,43 @@
 
   <div class="new-order">
     <div class="content">
-      <div>
-        x
-        <button type="submit" id="checkout-button">
-          Checkout Button number 1 !
-        </button>
-        x
-      </div>
+      <div class="card-wrapper"></div>
+      <form action="">
+        <div class="form-group">
+          <%= label_tag "Card number" , nil, class: "control-label" %>
 
-      <form id="checkout-form" name="checkoutForm" method="POST" action="/checkout">
-        <input type="hidden" name="page-number" value="sample-5">
+          <%= text_field_tag :number, nil,
+            class: "form-control",
+            placeholder: "Card number",
+            type: "tel" %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag "Full name" , nil, class: "control-label" %>
+
+          <%= text_field_tag :name, nil,
+            class: "form-control",
+            placeholder: "Full name",
+            type: "text" %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag "Expiry Date" , nil, class: "control-label" %>
+
+          <%= text_field_tag :expiry, nil,
+            class: "form-control",
+            placeholder: "MM / YY",
+            type: "tel" %>
+        </div>
+
+         <div class="form-group">
+          <%= label_tag "Secure code" , nil, class: "control-label" %>
+
+          <%= text_field_tag :cvc, nil,
+            class: "form-control",
+            placeholder: "123",
+            type: "tel" %>
+        </div>
       </form>
 
       <br/>
@@ -36,6 +63,39 @@
 <%= javascript_include_tag 'https://cdn.omise.co/omise.js' %>
 
 <script>
+  new Card({
+      form: document.querySelector('form'),
+      container: '.card-wrapper',
+
+      formSelectors: {
+          numberInput: 'input#number',
+          expiryInput: 'input#expiry',
+          cvcInput: 'input#cvc',
+          nameInput: 'input#name'
+      },
+
+      width: 300,
+      formatting: true,
+
+      messages: {
+        validDate: 'valid\ndate',
+        monthYear: 'mm/yy',
+      },
+
+      placeholders: {
+        number: '•••• •••• •••• ••••',
+        name: 'Full Name',
+        expiry: '••/••',
+        cvc: '•••'
+      },
+
+      masks: {
+        cardNumber: '•' // optional - mask card number
+      },
+
+      debug: false
+    });
+
   OmiseCard.configure({
     publicKey: 'pkey_test_5841eqedyaa3ukn3i9a',
     image: 'https://c1.staticflickr.com/5/4220/34090378444_fc5b319741_t.jpg',
@@ -46,7 +106,8 @@
 
   OmiseCard.configureButton('#checkout-button', {
     frameLabel: 'UX Academy',
-    submitLabel: 'PAY NOW'
+    submitLabel: 'PAY NOW',
+    buttonLabel: "Pay Me now"
   });
 
   OmiseCard.attach();
