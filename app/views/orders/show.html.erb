@@ -12,22 +12,24 @@
   <div class="new-order">
     <div class="content">
       <div class="card-wrapper"></div>
-      <form action="">
+      <form id="checkout-form" action="">
         <div class="form-group">
           <%= label_tag "Card number" , nil, class: "control-label" %>
 
           <%= text_field_tag :number, nil,
             class: "form-control",
             placeholder: "Card number",
+            :data => {:name => "number" },
             type: "tel" %>
         </div>
 
         <div class="form-group">
-          <%= label_tag "Full name" , nil, class: "control-label" %>
+          <%= label_tag "Name on card" , nil, class: "control-label" %>
 
           <%= text_field_tag :name, nil,
             class: "form-control",
             placeholder: "Full name",
+            :data => {:name => "name" },
             type: "text" %>
         </div>
 
@@ -37,6 +39,7 @@
           <%= text_field_tag :expiry, nil,
             class: "form-control",
             placeholder: "MM / YY",
+            :data => {:name => "expiry" },
             type: "tel" %>
         </div>
 
@@ -46,15 +49,21 @@
           <%= text_field_tag :cvc, nil,
             class: "form-control",
             placeholder: "123",
+            :data => {:name => "cvc" },
             type: "tel" %>
         </div>
+
+        <div class="form-group">
+          <input type="hidden" name="omiseToken" />
+          <%= submit_tag "Submit payment", class: "btn btn-success submit" %>
+        </div>
       </form>
+    </div>
+  </div>
 
-      <br/>
-      or<br/>
-      <br/>
-
-      Contact Kaewkanya@gmail.com when you compleate transfer money
+  <div class="new-order">
+    <div class="content">
+      For bank transfer, business document or more information, please contact Kaewkanya@gmail.com
     </div>
   </div>
 
@@ -64,51 +73,70 @@
 
 <script>
   new Card({
-      form: document.querySelector('form'),
-      container: '.card-wrapper',
+    form: document.querySelector('form'),
+    container: '.card-wrapper',
 
-      formSelectors: {
-          numberInput: 'input#number',
-          expiryInput: 'input#expiry',
-          cvcInput: 'input#cvc',
-          nameInput: 'input#name'
-      },
+    formSelectors: {
+        numberInput: 'input#number',
+        expiryInput: 'input#expiry',
+        cvcInput: 'input#cvc',
+        nameInput: 'input#name'
+    },
 
-      width: 300,
-      formatting: true,
+    width: 300,
+    formatting: true,
 
-      messages: {
-        validDate: 'valid\ndate',
-        monthYear: 'mm/yy',
-      },
+    messages: {
+      validDate: 'valid\ndate',
+      monthYear: 'mm/yy',
+    },
 
-      placeholders: {
-        number: '•••• •••• •••• ••••',
-        name: 'Full Name',
-        expiry: '••/••',
-        cvc: '•••'
-      },
+    placeholders: {
+      number: '•••• •••• •••• ••••',
+      name: 'Full Name',
+      expiry: '••/••',
+      cvc: '•••'
+    },
 
-      masks: {
-        cardNumber: '•' // optional - mask card number
-      },
+    masks: {
+      cardNumber: '•' // optional - mask card number
+    },
 
-      debug: false
+    debug: false
+  });
+
+
+  Omise.setPublicKey('pkey_test_5841eqedyaa3ukn3i9a');
+
+  var checkoutForm = document.getElementById('checkout-form')
+      checkoutForm.addEventListener('submit', submitHandler, false);
+
+  // Submit handler for checkout form.
+  function submitHandler(event) {
+    event.preventDefault();
+
+    var expiry = document.querySelector('[data-name="expiry"').value;
+    var expiry_array = expiry.split(" / ");
+    var expiry_month = expiry_array[0];
+    var expiry_year = "20" + expiry_array[1];
+
+    var cardObject = {
+      name: document.querySelector('[data-name="name"').value,
+      number: document.querySelector('[data-name="number"').value,
+      expiration_month: expiry_month,
+      expiration_year:  expiry_year,
+      security_code: document.querySelector('[data-name="cvc"').value
+    };
+
+    Omise.createToken('card', cardObject, function(statusCode, response) {
+      if (statusCode === 200) {
+        checkoutForm.omiseToken.value = response.id;
+        checkoutForm.submit();
+      }
+      else {
+        alert(response.message);
+      }
     });
+  }
 
-  OmiseCard.configure({
-    publicKey: 'pkey_test_5841eqedyaa3ukn3i9a',
-    image: 'https://c1.staticflickr.com/5/4220/34090378444_fc5b319741_t.jpg',
-    amount: <%= @order.grand_total_satang %>,
-    currency: 'thb',
-    submitLabel: 'Pay with credit card'
-  });
-
-  OmiseCard.configureButton('#checkout-button', {
-    frameLabel: 'UX Academy',
-    submitLabel: 'PAY NOW',
-    buttonLabel: "Pay Me now"
-  });
-
-  OmiseCard.attach();
 </script>
