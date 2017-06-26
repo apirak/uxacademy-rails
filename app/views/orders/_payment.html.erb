@@ -1,0 +1,120 @@
+<div class="card-wrapper"></div>
+
+<div class="form-group">
+  <%= label_tag "Card number" , nil, class: "control-label" %>
+
+  <%= text_field_tag :number, nil,
+    class: "form-control",
+    placeholder: "Card number",
+    :data => {:name => "number" },
+    type: "tel" %>
+</div>
+
+<div class="form-group">
+  <%= label_tag "Name on card" , nil, class: "control-label" %>
+
+  <%= text_field_tag :name, nil,
+    class: "form-control",
+    placeholder: "Full name",
+    :data => {:name => "name" },
+    type: "text" %>
+</div>
+
+<div class="form-group">
+  <%= label_tag "Expiry Date" , nil, class: "control-label" %>
+
+  <%= text_field_tag :expiry, nil,
+    class: "form-control",
+    placeholder: "MM / YY",
+    :data => {:name => "expiry" },
+    type: "tel" %>
+</div>
+
+<div class="form-group">
+  <%= label_tag "Secure code" , nil, class: "control-label" %>
+
+  <%= text_field_tag :cvc, nil,
+    class: "form-control",
+    placeholder: "123",
+    :data => {:name => "cvc" },
+    type: "tel" %>
+</div>
+
+<input type="hidden" name="omiseToken" />
+
+For bank transfer, business document or more information, please contact Kaewkanya@gmail.com
+
+<%= javascript_include_tag 'https://cdn.omise.co/omise.js' %>
+
+<script>
+  new Card({
+    form: document.querySelector('form'),
+    container: '.card-wrapper',
+
+    formSelectors: {
+        numberInput: 'input#number',
+        expiryInput: 'input#expiry',
+        cvcInput: 'input#cvc',
+        nameInput: 'input#name'
+    },
+
+    width: 300,
+    formatting: true,
+
+    messages: {
+      validDate: 'valid\ndate',
+      monthYear: 'mm/yy',
+    },
+
+    placeholders: {
+      number: '•••• •••• •••• ••••',
+      name: 'Full Name',
+      expiry: '••/••',
+      cvc: '•••'
+    },
+
+    masks: {
+      cardNumber: '•' // optional - mask card number
+    },
+
+    debug: false
+  });
+
+
+  Omise.setPublicKey('<%= Omise.public_api_key %>');
+
+  var checkoutForm = document.getElementById("new_order");
+  checkoutForm.addEventListener('submit', submitHandler, false);
+
+  // Submit handler for checkout form.
+  function submitHandler(event) {
+    event.preventDefault();
+
+    var expiry = $('[data-name="expiry"')[0].value;
+    var expiry_array = expiry.split(" / ");
+    var expiry_month = expiry_array[0];
+    var expiry_year = "20" + expiry_array[1];
+
+    var cardObject = {
+      name: $('[data-name="name"')[0].value,
+      number: $('[data-name="number"')[0].value,
+      expiration_month: expiry_month,
+      expiration_year:  expiry_year,
+      security_code: $('[data-name="cvc"')[0].value
+    };
+
+    $('[data-name="number"').val('');
+    $('[data-name="cvc"').val('');
+
+    Omise.createToken('card', cardObject, function(statusCode, response) {
+      if (statusCode === 200) {
+        checkoutForm.omiseToken.value = response.id;
+        checkoutForm.submit();
+      }
+      else {
+        alert(response.message);
+      }
+    });
+  }
+
+</script>

@@ -12,6 +12,21 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @event = @order.event
 
+    # Charge 1000.00 THB
+    charge = Omise::Charge.create({
+      amount: 1_000_00,
+      currency: "thb",
+      card: params[:omiseToken]
+    })
+
+    if charge.paid
+      # handle success
+      puts "thanks"
+    else
+      # handle failure
+      raise charge.failure_code
+    end
+
     respond_to do |format|
       if @order.save
         format.html { render :show, notice: 'Order was successfully create' }

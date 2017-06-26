@@ -64,7 +64,7 @@
   </div>
 
   <div class="payment">
-    <h2>Credit Card Payment</h2>
+    <h2>Payment form</h2>
     <%= render "payment" %>
   </div>
 
@@ -75,7 +75,7 @@
     <%= f.hidden_field(:ticket_regular) %>
     <%= f.hidden_field(:ticket_last_ticket) %>
 
-    <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>
+    <%= f.submit "Proceed to payment", id: "submit-payment", class: "btn btn-success submit" %>
   </div>
 
 <% end %>
