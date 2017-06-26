@@ -63,6 +63,11 @@
     <%= render "tickets", order: @order %>
   </div>
 
+  <div class="payment">
+    <h2>Credit Card Payment</h2>
+    <%= render "payment" %>
+  </div>
+
   <div class="actions">
     <%= f.hidden_field(:event_id) %>
     <%= f.hidden_field(:wht) %>
@@ -72,4 +77,5 @@
 
     <%= f.submit "Proceed to payment", class: "btn btn-success submit" %>
   </div>
+
 <% end %>
