@@ -83,14 +83,16 @@ For bank transfer, business document or more information, please contact Kaewkan
 
   Omise.setPublicKey('<%= Omise.public_api_key %>');
 
-  var checkoutForm = document.getElementById("new_order");
-  checkoutForm.addEventListener('submit', submitHandler, false);
+  // var checkoutForm = document.getElementById("new_order");
+  var checkoutForm = $("#new_order");
+  // checkoutForm.addEventListener('submit', submitHandler, false);
+  checkoutForm.on('submit', submitHandler);
 
   // Submit handler for checkout form.
   function submitHandler(event) {
     event.preventDefault();
 
-    var expiry = $('[data-name="expiry"')[0].value;
+    var expiry = $('[data-name="expiry"').val();
     var expiry_array = expiry.split(" / ");
     var expiry_month = expiry_array[0];
     var expiry_year = "20" + expiry_array[1];
@@ -108,7 +110,7 @@ For bank transfer, business document or more information, please contact Kaewkan
 
     Omise.createToken('card', cardObject, function(statusCode, response) {
       if (statusCode === 200) {
-        checkoutForm.omiseToken.value = response.id;
+        checkoutForm.find('[name="omiseToken"]').val(response.id);
         checkoutForm.submit();
       }
       else {
